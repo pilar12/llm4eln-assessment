@@ -81,5 +81,5 @@ hash_value = hashlib.sha256(
 ).hexdigest()
 
 file_name = f"{username}_{environ.get('API_PROVIDER')}_proof_{hash_value}.txt"
-with open(f"./proof/{file_name}", "w") as f:
+with open(f"./proof/{file_name}", "w", encoding="utf-8") as f:
     f.write(environ.get('API_MODEL', '') + ":\n" + ai_msg)
